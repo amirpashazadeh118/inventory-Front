@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'; // ✅ اضافه کن
 import { HttpClientModule } from '@angular/common/http'; // برای درخواست‌ها
 import { CommonModule } from '@angular/common'; // برای دستورات *ngIf و *ngFor
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +19,7 @@ export class LoginComponent {
   password = '';
   error: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   onLogin() {
     this.http.post('/api/Login', {
@@ -27,7 +27,7 @@ export class LoginComponent {
       password: this.password
     }).subscribe({
       next: (res) => {
-        console.log('Login success:', res);
+        this.router.navigate(['/login']);
       },
       error: (err) => {
         this.error = 'Invalid username or password';

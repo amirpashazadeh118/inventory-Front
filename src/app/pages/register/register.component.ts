@@ -76,7 +76,6 @@ export class RegisterComponent {
           }, 2500);
         },
         error: (err) => {
-          debugger
           this.error = err.error.error;
           console.error(err);
         },
