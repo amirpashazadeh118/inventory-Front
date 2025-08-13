@@ -62,7 +62,7 @@ export class RegisterComponent {
       .post('/api/Register', {
         username: this.username,
         password: this.password,
-        Name: this.firstname + ' ' + this.lastname,
+        name: this.firstname + ' ' + this.lastname,
         email: this.email,
       })
       .subscribe({
@@ -76,7 +76,8 @@ export class RegisterComponent {
           }, 2500);
         },
         error: (err) => {
-          this.error = err;
+          debugger
+          this.error = err.error.error;
           console.error(err);
         },
       });
