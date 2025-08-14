@@ -153,10 +153,22 @@
         <span class="card__chevron" aria-hidden="true">›</span>
       </a>
     </nav>
-    <table>
-        <td class="left-">fds</td>
-        <td>fd</td>
-    </table>
+
+    <div class="trades-container">
+      <div class="trades-column sells">
+        <h3>All Sells</h3>
+        <ul>
+          <li *ngFor="let sell of sells">{{ sell }}</li>
+        </ul>
+      </div>
+
+      <div class="trades-column buys">
+        <h3>All Buys</h3>
+        <ul>
+          <li *ngFor="let buy of buys">{{ buy }}</li>
+        </ul>
+      </div>
+    </div>
 
     <footer class="dashboard__footer" aria-hidden="true">
       <small>© amir pasha store</small>
