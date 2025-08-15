@@ -1,0 +1,44 @@
+<body>
+  <div class="add-good-container">
+    <h2>Add New Good</h2>
+    <form [formGroup]="addGoodForm" (ngSubmit)="onSubmit()">
+      <!-- Name Input -->
+      <div class="form-group">
+        <label for="name">Good Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Enter product name"
+        />
+      </div>
+
+      <!-- Price Input -->
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          id="price"
+          type="number"
+          formControlName="price"
+          placeholder="Enter price"
+        />
+      </div>
+
+      <!-- Category Selector -->
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select id="category" formControlName="categoryRef">
+          <option value="" disabled selected>Select a category</option>
+          <option *ngFor="let cat of categories" [value]="cat.CategorizationID">
+            {{ cat.Name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="addGoodForm.invalid || isSubmitting">
+        {{ isSubmitting ? "Submitting..." : "Add Good" }}
+      </button>
+    </form>
+  </div>
+</body>

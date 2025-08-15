@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddGoodComponent } from './add-good.component';
+import { AddNewGoodComponent } from './add-new-good.component';
 
-describe('AddGoodComponent', () => {
-  let component: AddGoodComponent;
-  let fixture: ComponentFixture<AddGoodComponent>;
+describe('AddNewGoodComponent', () => {
+  let component: AddNewGoodComponent;
+  let fixture: ComponentFixture<AddNewGoodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddGoodComponent]
+      imports: [AddNewGoodComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddGoodComponent);
+    fixture = TestBed.createComponent(AddNewGoodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
