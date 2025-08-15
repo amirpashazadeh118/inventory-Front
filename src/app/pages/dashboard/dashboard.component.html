@@ -157,15 +157,40 @@
     <div class="trades-container">
       <div class="trades-column sells">
         <h3>All Sells</h3>
-        <ul>
-          <li *ngFor="let sell of sells">{{ sell }}</li>
+        <ul class="sell-list">
+          <li *ngFor="let sell of sells" class="sell-item">
+            <div class="sell-header">
+              <span class="sell-title">{{ sell.pname }}</span>
+              <span class="sell-number">#{{ sell.Count }}</span>
+            </div>
+            <div class="sell-description">{{ sell.Description }}</div>
+            <div class="sell-description">{{ sell.TotalCost }}</div>
+            <div class="sell-footer">
+              <span class="sell-user">By: {{ sell.uname }}</span>
+              <span class="sell-date">{{
+                sell.CreateAt | date : "medium"
+              }}</span>
+            </div>
+          </li>
         </ul>
       </div>
 
       <div class="trades-column buys">
         <h3>All Buys</h3>
         <ul>
-          <li *ngFor="let buy of buys">{{ buy }}</li>
+          <li *ngFor="let sell of buys" class="sell-item">
+            <div class="sell-header">
+              <span class="sell-title">{{ sell.pname }}</span>
+              <span class="sell-number">count: {{ sell.Number }}</span>
+            </div>
+            <div class="sell-description">{{ sell.Description }}</div>
+            <div class="sell-footer">
+              <span class="sell-user">By: {{ sell.uname }}</span>
+              <span class="sell-date">{{
+                sell.CreateAt | date : "medium"
+              }}</span>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
